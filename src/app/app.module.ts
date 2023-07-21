@@ -17,6 +17,7 @@ const rutas: Routes = [
   { path: 'recientes', component: RecientesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'registros', component: RegistrosComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // redirige al login si la ruta no se encuentra
 ];
 
