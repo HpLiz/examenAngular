@@ -5,8 +5,8 @@
 
     <div class="hero-content flex-col lg:flex-row-reverse">
         <div class="text-center lg:text-left">
-            <h1 class="text-5xl font-bold">Login!</h1>
-            <p class="py-6">Login with your account to use PokeApi.</p>
+            <h1 class="text-5xl font-bold">Sign up!</h1>
+            <p class="py-6">Create a new account to use PokeApi.</p>
         </div>
         <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div class="card-body">
@@ -16,12 +16,12 @@
                     </label>
                     <input type="text" placeholder="user" class="input input-bordered" [(ngModel)]="fullname" />
                 </div>
-                <!--<div class="form-control">
+                <div class="form-control">
                     <label class="label">
-                        <span class="label-text">Email</span>
+                        <span class="label-text">Email:</span>
                     </label>
                     <input type="text" placeholder="email" class="input input-bordered" [(ngModel)]="email" />
-                </div>-->
+                </div>
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text">Password:</span>
@@ -29,13 +29,12 @@
                     <input type="password" placeholder="password" class="input input-bordered" [(ngModel)]="password" />
                 </div>
                 <div class="form-control mt-6">
-                    <button (disabled)="disableLoginButton" class="btn btn-primary"
-                        (click)="login($event)">Login</button>
+                    <button (disabled)="disableLoginButton" class="btn btn-primary" (click)="signup($event)">Sign
+                        up</button>
                 </div>
 
-                <hr><span style="text-align: center;">You do not have an account?</span><hr/>
-                <button (disabled)="disableLoginButton" class="btn btn-primary" (click)="signup($event)">Signup</button>
-
+                <hr><span style="text-align: center;">Do you already have an account?</span><hr/>
+                <button (disabled)="disableLoginButton" class="btn btn-primary" (click)="login($event)">Login</button>
 
             </div>
         </div>

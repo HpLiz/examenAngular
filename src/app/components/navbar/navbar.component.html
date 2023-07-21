@@ -1,27 +1,22 @@
-<div class="navbar bg-base-100">
-    <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl">{{fullname}}</a>
-    </div>
-    <div class="flex-none gap-2">
 
-        <div class="dropdown dropdown-end">
-            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                <div class="w-10 rounded-full">
-                    <img
-                        src="https://img.freepik.com/vector-premium/perfil-hombre-dibujos-animados_18591-58482.jpg?w=2000" />
-                </div>
-            </label>
-            <ul tabindex="0"
-                class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                <li>
-                    <a class="justify-between">
-                        Profile
-                        <span class="badge">New</span>
-                    </a>
-                </li>
-                <li><a>Settings</a></li>
-                <li><a routerLink="/login" (click)="logout()">Logout</a></li>
-            </ul>
+
+<div class="navbar bg-base-100">
+    <div class="navbar-start">
+        <app-drawer></app-drawer>
+        <a class="normal-case text-xl ml-10">{{fullname ? fullname:
+            'Usuario Anonimo'}}</a>
+
+    </div>
+    <div class="navbar-center">
+        <a class=" normal-case text-2xl font-extrabold">{{textNavbar}}</a>
+    </div>
+    <div class="navbar-end mr-3">
+        <div class="tooltip tooltip-left" data-tip="Log Out">
+            <a class="btn btn-circle text-lg" routerLink="/login"
+                (click)="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
         </div>
+
     </div>
 </div>

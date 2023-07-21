@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
 
-export class LoginComponent {
+export class SignupComponent {
   constructor(private router: Router) { }
 
   email: string = '';
@@ -17,18 +17,18 @@ export class LoginComponent {
   warning: boolean = false;
   warningMessage: string = '';
 
-  login(event: Event) {
+  signup(event: Event) {
     // alert(`email: ${this.email}, password: ${this.password}`);
     // this.validar();
     event.preventDefault();
     const user: object = {
-      // email: this.email,
+      email: this.email,
       password: this.password,
       fullname: this.fullname,
     };
 
     if (this.validar()) {
-      // sessionStorage.setItem('email', this.email);
+      sessionStorage.setItem('email', this.email);
       // sessionStorage.setItem('password', this.password);
       sessionStorage.setItem('fullname', this.fullname);
 
@@ -36,8 +36,8 @@ export class LoginComponent {
     }
   }
 
-  signup(event: Event) {
-      this.router.navigate(['/signup']);
+  login(event: Event) {
+    this.router.navigate(['/login']);
   }
 
   validar() {
@@ -58,6 +58,14 @@ export class LoginComponent {
     // validar password
     if (this.password.length < 6) {
       this.warningMessage = 'La constraseña debe contener al menos 6 caracteres.';
+      this.warning = true;
+      return false;
+    }
+
+    // validar email
+    const emailregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailregex.test(this.email)) {
+      this.warningMessage = 'Correo electrónico inválido.';
       this.warning = true;
       return false;
     }
