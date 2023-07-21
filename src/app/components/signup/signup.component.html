@@ -12,19 +12,19 @@
             <div class="card-body">
                 <div class="form-control">
                     <label class="label">
-                        <span class="label-text">User:</span>
+                        <span class="label-text">Nombre de usuario:</span>
                     </label>
                     <input type="text" placeholder="user" class="input input-bordered" [(ngModel)]="fullname" />
                 </div>
                 <div class="form-control">
                     <label class="label">
-                        <span class="label-text">Email:</span>
+                        <span class="label-text">Correo electrónico:</span>
                     </label>
                     <input type="text" placeholder="email" class="input input-bordered" [(ngModel)]="email" />
                 </div>
                 <div class="form-control">
                     <label class="label">
-                        <span class="label-text">Password:</span>
+                        <span class="label-text">contraseña:</span>
                     </label>
                     <input type="password" placeholder="password" class="input input-bordered" [(ngModel)]="password" />
                 </div>
@@ -33,7 +33,7 @@
                         up</button>
                 </div>
 
-                <hr><span style="text-align: center;">Do you already have an account?</span><hr/>
+                <hr><span style="text-align: center;">Ya tienes una cuenta?</span><hr/>
                 <button (disabled)="disableLoginButton" class="btn btn-primary" (click)="login($event)">Login</button>
 
             </div>
