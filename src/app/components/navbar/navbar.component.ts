@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { RandomUserService } from './../../../services/api.service';
 
 @Component({
   selector: 'app-navbar',
